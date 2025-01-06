@@ -17,7 +17,7 @@ function App() {
 
   const getEmployee = () => {
     // Send the request
-    fetch("https://randomuser.me/api?nat=en")
+    fetch("http://localhost:5000/api/employees")
       .then((response) => response.json())
       .then((data) => {
         setEmployee(data.results[0]);
@@ -25,9 +25,11 @@ function App() {
   };
 
   return (
-    <div className='App'>
+    <div className="App">
       <EmployeeCard employee={employee} />
-      <button type="button" onClick={getEmployee}>Get employee</button>
+      <button type="button" onClick={getEmployee}>
+        Get employee
+      </button>
     </div>
   );
 }
